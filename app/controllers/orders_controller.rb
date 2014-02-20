@@ -10,13 +10,11 @@ class OrdersController < ApplicationController
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
-
   # GET /orders/new
   def new
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
   end
-
 
   # POST /orders
   # POST /orders.json
@@ -39,10 +37,6 @@ class OrdersController < ApplicationController
       end
     end
   end
-
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
